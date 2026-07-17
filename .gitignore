@@ -1,0 +1,6 @@
+# OS / cloud-drive junk
+.DS_Store
+Thumbs.db
+desktop.ini
+*.tmp
+*~
