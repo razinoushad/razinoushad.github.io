@@ -7,7 +7,7 @@
   function preferred() {
     const saved = localStorage.getItem(THEME_KEY);
     if (saved === "light" || saved === "dark") return saved;
-    return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    return "light"; // default to light mode regardless of system preference
   }
   const apply = (t) => root.setAttribute("data-theme", t);
   apply(preferred());
@@ -39,9 +39,5 @@
 
     const yearEl = document.getElementById("year");
     if (yearEl) yearEl.textContent = new Date().getFullYear();
-  });
-
-  window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", function (e) {
-    if (!localStorage.getItem(THEME_KEY)) apply(e.matches ? "dark" : "light");
   });
 })();
